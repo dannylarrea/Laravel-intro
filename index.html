@@ -36284,14 +36284,10 @@
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;">Las aplicaciones de Laravel siguen el </font>
                   <font style="vertical-align: inherit;">patrón de diseño </font>
-                  <font style="vertical-align: inherit;">tradicional </font>
-                </font><strong>
-                  <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">Modelo-Vista-Controlador</font>
-                  </font>
-                </strong>
+                  <font style="vertical-align: inherit;">tradicional <b>Modelo-Vista-Controlador</b>,</font>
+                </font>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;"> , donde se usa:</font>
+                  <font style="vertical-align: inherit;"> donde se usa:</font>
                 </font>
               </p>
               <ul>
@@ -36334,7 +36330,7 @@
                   </font>
                 </strong>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;"> se utilizan para asignar URL a acciones designadas del
+                  <font style="vertical-align: inherit;"> se utilizan para asignar una URL a una acción designada del
                     controlador, como se muestra a continuación.</font>
                 </font>
               </p>
@@ -36346,8 +36342,7 @@
                   sizes="(max-width: 1998px) 100vw, 1998px">
                 <p class="wp-caption-text">
                   <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">El ciclo completo de solicitud MVC en una aplicación Laravel
-                      5</font>
+                    <font style="vertical-align: inherit;">El ciclo completo de solicitud MVC en una aplicación Laravel</font>
                   </font>
                 </p>
               </div>
@@ -36411,50 +36406,25 @@
                   </font>
                 </li>
               </ul>
-              <p>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Me gusta decir que </font>
-                </font><a href="https://selftaughtcoders.com/model-view-controller-mvc-web-application/">
-                  <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">una aplicación MVC se parece mucho a jugar con Legos</font>
-                  </font>
-                </a>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;"> .</font>
-                </font>
-              </p>
-              <p>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Y construir uno con Laravel 5 es muy sencillo.</font>
-                </font>
-              </p>
+              
               <hr>
-              <p><i class="fa fa-file-code-o heading-icon"></i></p>
               <h2>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Construyendo una aplicación de muestra</font>
+                  <font style="vertical-align: inherit;">Ejemplo de construcción de una aplicación</font>
                 </font>
               </h2>
+              
               <p>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">En aras de la demostración, lo guiaré a través del proceso de
-                    construcción </font>
-                </font><em>
-                  <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">del inicio de</font>
-                  </font>
-                </em>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;"> una aplicación Laravel 5 de muestra con todos los componentes
-                    MVC: un modelo, una vista y un controlador.</font>
+                  <font style="vertical-align: inherit;">Digamos que queremos crear una aplicación que se ocupe
+                    de automóviles... Es por ello que crearemos un nuevo proyecto de Laravel llamado <b>MotorServices</b>:</font>
                 </font>
               </p>
-              <p>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Entonces, digamos que desea crear una aplicación que se ocupe
-                    de los automóviles ...</font>
-                </font>
-              </p>
+
+              
+<pre class=" language-bash" data-language="bash"><code class=" language-bash">
+$ composer create-project --prefer-dist laravel/laravel MotorServices
+</code></pre>
               <p><a name="model"></a></p>
               <h2>
                 <font style="vertical-align: inherit;">
@@ -36477,49 +36447,49 @@
                   </font>
                 </strong>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;"> , que le proporciona un montón de comandos útiles para
-                    ayudarlo a construir su aplicación.</font>
+                  <font style="vertical-align: inherit;">, que proporciona un montón de comandos útiles para
+                    ayudar a construir una aplicación.</font>
                 </font>
               </p>
               <p>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Entonces, encienda su línea de comando (y conéctese a su
-                    máquina virtual de Homestead, si está usando </font>
-                </font><a target="_blank" href="http://laravel.com/docs/5.1/homestead">
-                  <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">Laravel Homestead</font>
-                  </font>
-                </a>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;"> ), muévase al directorio principal de su aplicación y ejecute
-                    el siguiente comando para generar un nuevo modelo de automóvil:</font>
+                  <font style="vertical-align: inherit;">Abra una terminal dentro del directorio principal de su aplicación y ejecute
+                    el siguiente comando para generar un nuevo modelo de <b>automóvil (Car)</b>:</font>
                 </font>
               </p>
-              <pre class=" language-bash" data-language="bash"><code class=" language-bash">$ php artisan <span class="token function">make</span><span class="token punctuation">:</span>model Car <span class="token operator">--</span>migration
+<pre class=" language-bash" data-language="bash"><code class=" language-bash">
+$ php artisan make:model Car -mcr
 </code></pre>
               <p>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Todos los modelos se almacenan en el </font>
-                </font><code>app</code>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">directorio </font>
-                  <font style="vertical-align: inherit;">principal </font>
-                  <font style="vertical-align: inherit;">, por lo que el comando generará un </font>
-                </font><code>app/Car.php</code>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">archivo de modelo con el siguiente código:</font>
+                  <font style="vertical-align: inherit;">El comando crea el modelo <code>model</code>, el controlador <code>-c</code>, la relación entre ambos <code>-r</code> abreviatura de <code>--resource</code> y la migración <code>-m</code>. Por convenio el nombre del modelo ha de ir con la primera letra en mayúscula, en ingles y en singular.
+                  </font>
                 </font>
               </p>
-              <pre class=" language-php" data-language="php"><code class=" language-php"><span class="token delimiter">&lt;?php</span><font></font>
-<font></font>
-<span class="token keyword">namespace</span> <span class="token package">App</span><span class="token punctuation">;</span><font></font>
-<font></font>
-<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Database<span class="token punctuation">\</span>Eloquent<span class="token punctuation">\</span>Model</span><span class="token punctuation">;</span><font></font>
-<font></font>
-<span class="token keyword">class</span> <span class="token class-name">Car</span> <span class="token keyword">extends</span> <span class="token class-name">Model</span>
-<span class="token punctuation">{</span>
-   <span class="token comment" spellcheck="true"> //
-</span><span class="token punctuation">}</span>
+                <p>
+                <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">Todos los modelos se almacenan en el directorio <code>app/Models</code>
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">, por lo que el comando generará un archivo</font>
+                </font><code>app/Models/Car.php</code>
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;"> de modelo con el siguiente código:</font>
+                </font>
+              </p>
+<pre class=" language-php" data-language="php">
+<code class=" language-php">
+<span class="token delimiter">&lt;?php</span>
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Car extends Model
+{
+  use HasFactory;
+}
 </code></pre>
               <p>
                 <font style="vertical-align: inherit;">
@@ -36533,10 +36503,10 @@
               </p>
               <p>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Y, de hecho, al proporcionar esa </font>
+                  <font style="vertical-align: inherit;">Y, de hecho, al proporcionar esa <code>-m</code>, abreviatura de </font>
                 </font><code>--migration</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">opción al generar el modelo, Laravel también generó un </font>
+                  <font style="vertical-align: inherit;"> al generar el modelo, Laravel también generó un </font>
                   <font style="vertical-align: inherit;">archivo de </font>
                 </font><strong>
                   <font style="vertical-align: inherit;">
@@ -36544,100 +36514,96 @@
                   </font>
                 </strong>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;"> para crear esa </font>
+                  <font style="vertical-align: inherit;"> para crear esa tabla </font>
                 </font><code>cars</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">tabla de base de datos. </font>
+                  <font style="vertical-align: inherit;"> de base de datos. </font>
                   <font style="vertical-align: inherit;">El archivo de migración se encuentra en </font>
-                </font><code>[timestamp]_create_cars_table.php</code>
+                </font><code>database/migrations/[timestamp]_create_cars_table.php</code>
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;">y contiene el siguiente código:</font>
                 </font>
               </p>
-              <pre class=" language-php" data-language="php"><code class=" language-php"><span class="token delimiter">&lt;?php</span><font></font>
-<font></font>
-<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Database<span class="token punctuation">\</span>Schema<span class="token punctuation">\</span>Blueprint</span><span class="token punctuation">;</span>
-<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Database<span class="token punctuation">\</span>Migrations<span class="token punctuation">\</span>Migration</span><span class="token punctuation">;</span><font></font>
-<font></font>
-<span class="token keyword">class</span> <span class="token class-name">CreateCarsTable</span> <span class="token keyword">extends</span> <span class="token class-name">Migration</span>
-<span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">/**
+<pre class=" language-php" data-language="php">
+<code class=" language-php">
+<span class="token delimiter">&lt;?php</span>
+
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateCarsTable extends Migration
+{
+    /**
      * Run the migrations.
      *
      * @return void
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">up<span class="token punctuation">(</span></span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token scope">Schema<span class="token punctuation">::</span></span><span class="token function">create<span class="token punctuation">(</span></span><span class="token string">'cars'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>Blueprint <span class="token variable">$table</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">increments<span class="token punctuation">(</span></span><span class="token string">'id'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">timestamps<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><font></font>
-<font></font>
-    <span class="token comment" spellcheck="true">/**
+     */
+
+    public function up()
+    {
+        Schema::create('cars', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+        });
+    }
+
+    /**
      * Reverse the migrations.
      *
      * @return void
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">down<span class="token punctuation">(</span></span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token scope">Schema<span class="token punctuation">::</span></span><span class="token function">drop<span class="token punctuation">(</span></span><span class="token string">'cars'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+     */
+
+    public function down()
+    {
+        Schema::dropIfExists('cars');
+    }
+}
 </code></pre>
               <p>
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;">(Si no está familiarizado con el concepto de migraciones de
                     bases de datos, lea más sobre cómo Laravel usa las </font>
                 </font><a
-                  href="https://selftaughtcoders.com/from-idea-to-launch/lesson-15/managing-database-with-laravel-5-migrations/">
+                  href="https://laravel.com/docs/master/migrations">
                   <font style="vertical-align: inherit;">
                     <font style="vertical-align: inherit;">migraciones de bases de datos para ayudarlo a administrar su
-                      base</font>
+                      base de datos</font>
                   </font>
                 </a>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;"> de </font><a
-                    href="https://selftaughtcoders.com/from-idea-to-launch/lesson-15/managing-database-with-laravel-5-migrations/">
-                    <font style="vertical-align: inherit;">datos</font>
-                  </a>
-                  <font style="vertical-align: inherit;"> directamente desde su aplicación. Es increíble).</font>
+                  <font style="vertical-align: inherit;"> directamente desde su aplicación de Laravel).</font>
                 </font>
               </p>
               <p>
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;">Todo lo que tienes que hacer ahora es usar </font>
-                </font><a target="_blank" href="http://laravel.com/docs/5.1/migrations#creating-columns">
+                </font><a target="_blank" href="https://laravel.com/docs/master/migrations#available-column-types">
                   <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">la documentación del generador de esquemas de Laravel</font>
+                    <font style="vertical-align: inherit;">la documentación que proporciona Laravel para crear los diversos tipos de atributos.</font>
                   </font>
                 </a>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;"> para completar el archivo de migración. </font>
                   <font style="vertical-align: inherit;">Por lo tanto, podría definir algunas columnas adicionales para,
                     por ejemplo, almacenar la marca, el modelo y la fecha de producción de los automóviles:</font>
                 </font>
               </p>
-              <pre class=" language-php" data-language="php"><code class=" language-php"><span class="token punctuation">.</span>
-<span class="token punctuation">.</span>
-<span class="token punctuation">.</span>
-  <span class="token scope">Schema<span class="token punctuation">::</span></span><span class="token function">create<span class="token punctuation">(</span></span><span class="token string">'cars'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>Blueprint <span class="token variable">$table</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">increments<span class="token punctuation">(</span></span><span class="token string">'id'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">string<span class="token punctuation">(</span></span><span class="token string">'make'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">string<span class="token punctuation">(</span></span><span class="token string">'model'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">date<span class="token punctuation">(</span></span><span class="token string">'produced_on'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token variable">$table</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">timestamps<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">.</span>
-<span class="token punctuation">.</span>
-<span class="token punctuation">.</span>
+<pre class=" language-php" data-language="php"><code class=" language-php">...
+Schema::create('cars', function (Blueprint $table) {
+  $table->id();
+  $table->string('make');
+  $table->string('model');
+  $table->date('produced_on');
+  $table->timestamps();
+});
+...
 </code></pre>
               <p>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Y luego puede ejecutar la migración para crear la </font>
+                  <font style="vertical-align: inherit;">Y luego puede (o no) ejecutar la migración para crear la tabla</font>
                 </font><code>cars</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">tabla usando el siguiente comando Artisan:</font>
+                  <font style="vertical-align: inherit;"> usando el siguiente comando Artisan:</font>
                 </font>
               </p>
               <pre class=" language-bash" data-language="bash"><code class=" language-bash">$ php artisan migrate
@@ -36645,7 +36611,7 @@
               <p>
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;">Con los elementos relacionados con la base de datos abordados,
-                    ahora podemos pasar a crear un controlador.</font>
+                    ahora podemos pasar a hablar del controlador.</font>
                 </font>
               </p>
               <div class="alert-info">
@@ -36656,10 +36622,10 @@
                 </strong>
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;"> Por el bien de la prueba, en este punto, simplemente agregué
-                    manualmente una entrada a la </font>
+                    manualmente una entrada a la tabla</font>
                 </font><code>cars</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">tabla de </font>
+                  <font style="vertical-align: inherit;"> de </font>
                   <font style="vertical-align: inherit;">la </font>
                   <font style="vertical-align: inherit;">base de datos.
                   </font>
@@ -36674,129 +36640,121 @@
               <p>
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;">En Laravel, un tipo de objeto, como un automóvil, en este caso,
-                    se denomina </font>
-                </font><strong>
-                  <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">recurso</font>
-                  </font>
-                </strong>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;"> .</font>
-                </font>
+                    se denomina <b>recurso</b>.</font>
               </p>
               <p>
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;">Dado que es tan común crear aplicaciones en torno a los
-                    recursos, puede generar un </font>
-                </font><strong>
-                  <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">controlador de recursos</font>
-                  </font>
-                </strong>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;"> , un controlador para manejar todas las solicitudes
-                    relacionadas con un recurso, utilizando otro comando simple de Artisan:</font>
+                    recursos, puede generar un <b>controlador de recursos</b>, esto con el fin de manejar todas las solicitudes
+                    relacionadas con un recurso. <br><br> Recordad que ya hemos creado el controlador mediante la ejecución del comando:</font>
                 </font>
               </p>
-              <pre class=" language-bash" data-language="bash"><code class=" language-bash">$ php artisan <span class="token function">make</span><span class="token punctuation">:</span>controller CarController
+<pre class=" language-bash" data-language="bash"><code class=" language-bash">
+$ php artisan make:model Car -mcr
 </code></pre>
               <p>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Eso generará un </font>
+                  <font style="vertical-align: inherit;">La opción <code>-c</code> generará un archivo de controlador</font>
                 </font><code>app/Http/Controllers/CarController.php</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">archivo de controlador con el siguiente código:</font>
+                  <font style="vertical-align: inherit;">con el siguiente código:</font>
                 </font>
               </p>
               <pre class=" language-php" data-language="php"><code class=" language-php"><span class="token delimiter">&lt;?php</span><font></font>
-<font></font>
-<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers</span><span class="token punctuation">;</span><font></font>
-<font></font>
-<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Request</span><span class="token punctuation">;</span><font></font>
-<font></font>
-<span class="token keyword">use</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Requests</span><span class="token punctuation">;</span>
-<span class="token keyword">use</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>Controller</span><span class="token punctuation">;</span><font></font>
-<font></font>
-<span class="token keyword">class</span> <span class="token class-name">CarController</span> <span class="token keyword">extends</span> <span class="token class-name">Controller</span>
-<span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">/**
+
+namespace App\Http\Controllers;
+
+use App\Models\Car;
+use Illuminate\Http\Request;
+
+class CarController extends Controller
+{
+    /**
      * Display a listing of the resource.
      *
-     * @return Response
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">index<span class="token punctuation">(</span></span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-       <span class="token comment" spellcheck="true"> //
-</span>    <span class="token punctuation">}</span><font></font>
-<font></font>
-    <span class="token comment" spellcheck="true">/**
+     * @return \Illuminate\Http\Response
+     */
+
+    public function index()
+    {
+        //
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
-     * @return Response
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">create<span class="token punctuation">(</span></span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-       <span class="token comment" spellcheck="true"> //
-</span>    <span class="token punctuation">}</span><font></font>
-<font></font>
-    <span class="token comment" spellcheck="true">/**
+     * @return \Illuminate\Http\Response
+     */
+
+    public function create()
+    {
+        //
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
-     * @return Response
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">store<span class="token punctuation">(</span></span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-       <span class="token comment" spellcheck="true"> //
-</span>    <span class="token punctuation">}</span><font></font>
-<font></font>
-    <span class="token comment" spellcheck="true">/**
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return Response
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">show<span class="token punctuation">(</span></span><span class="token variable">$id</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-       <span class="token comment" spellcheck="true"> //
-</span>    <span class="token punctuation">}</span><font></font>
-<font></font>
-    <span class="token comment" spellcheck="true">/**
+     * @param  \App\Models\Car  $car
+     * @return \Illuminate\Http\Response
+     */
+
+    public function show(Car $car)
+    {
+        //
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return Response
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">edit<span class="token punctuation">(</span></span><span class="token variable">$id</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-       <span class="token comment" spellcheck="true"> //
-</span>    <span class="token punctuation">}</span><font></font>
-<font></font>
-    <span class="token comment" spellcheck="true">/**
+     * @param  \App\Models\Car  $car
+     * @return \Illuminate\Http\Response
+     */
+
+    public function edit(Car $car)
+    {
+        //
+    }
+
+    /**
      * Update the specified resource in storage.
      *
-     * @param  int  $id
-     * @return Response
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">update<span class="token punctuation">(</span></span><span class="token variable">$id</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-       <span class="token comment" spellcheck="true"> //
-</span>    <span class="token punctuation">}</span><font></font>
-<font></font>
-    <span class="token comment" spellcheck="true">/**
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Car  $car
+     * @return \Illuminate\Http\Response
+     */
+
+    public function update(Request $request, Car $car)
+    {
+        //
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return Response
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">destroy<span class="token punctuation">(</span></span><span class="token variable">$id</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-       <span class="token comment" spellcheck="true"> //
-</span>    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+     * @param  \App\Models\Car  $car
+     * @return \Illuminate\Http\Response
+     */
+     
+    public function destroy(Car $car)
+    {
+        //
+    }
+}</code></pre>
               <p>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Tenga en cuenta que genera automáticamente un controlador con
+                  <font style="vertical-align: inherit; color:red;">Ten en cuenta que se genera automáticamente un controlador con
                     todas las acciones típicas de CRUD.</font>
                 </font>
               </p>
@@ -36813,173 +36771,80 @@
               </h2>
               <p>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Nuevamente, dado que este es un escenario tan común, puede
-                    definir una única </font>
-                </font><strong>
-                  <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">ruta de recursos</font>
-                  </font>
-                </strong>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;"> , que crea rutas para </font>
-                </font><em>
-                  <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">todas</font>
-                  </font>
-                </em>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;"> esas acciones del controlador de recursos.</font>
+                  <font style="vertical-align: inherit;">Dado que este es un escenario tan común, puede
+                    definir todas las rutas del recurso, de manera genérica, dentro del fichero <code>routes/web.php</code>.</font>
                 </font>
               </p>
-              <p>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">En el archivo de configuración de rutas </font>
-                </font><code>app/Http/routes.php</code>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">, agregue lo siguiente para definir una ruta de recursos de
-                    automóvil:</font>
-                </font>
-              </p>
-              <pre class=" language-php" data-language="php"><code class=" language-php"><span class="token scope">Route<span class="token punctuation">::</span></span><span class="token function">resource<span class="token punctuation">(</span></span><span class="token string">'cars'</span><span class="token punctuation">,</span> <span class="token string">'CarController'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-              <p>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Esa única definición de ruta definirá </font>
-                </font><em>
-                  <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">todas</font>
-                  </font>
-                </em>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;"> las rutas relacionadas con nuestro recurso Coche:</font>
-                </font>
-              </p>
+              
               <table>
                 <thead>
-                  <tr>
-                    <th>
-                      <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">tipo de solicitud</font>
-                      </font>
-                    </th>
-                    <th>
-                      <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">Sendero</font>
-                      </font>
-                    </th>
-                    <th>
-                      <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">Acción</font>
-                      </font>
-                    </th>
-                    <th>
-                      <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">Nombre de ruta</font>
-                      </font>
-                    </th>
-                  </tr>
+                <tr>
+                <th>Request Type</th>
+                <th>Path</th>
+                <th>Action</th>
+                <th>Route Name</th>
+                </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>
-                      <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">OBTENER</font>
-                      </font>
-                    </td>
-                    <td><code>/cars</code></td>
-                    <td><code>index</code></td>
-                    <td>
-                      <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">cars.index</font>
-                      </font>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">OBTENER</font>
-                      </font>
-                    </td>
-                    <td><code>/cars/create</code></td>
-                    <td><code>create</code></td>
-                    <td>
-                      <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">cars.create</font>
-                      </font>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">CORREO</font>
-                      </font>
-                    </td>
-                    <td><code>/cars</code></td>
-                    <td><code>store</code></td>
-                    <td>
-                      <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">cars.store</font>
-                      </font>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">OBTENER</font>
-                      </font>
-                    </td>
-                    <td><code>/cars/{car}</code></td>
-                    <td><code>show</code></td>
-                    <td>
-                      <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">cars.show</font>
-                      </font>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">OBTENER</font>
-                      </font>
-                    </td>
-                    <td><code>/cars/{car}/edit</code></td>
-                    <td><code>edit</code></td>
-                    <td>
-                      <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">cars.editar</font>
-                      </font>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">PONER / PARCHE</font>
-                      </font>
-                    </td>
-                    <td><code>/cars/{car}</code></td>
-                    <td><code>update</code></td>
-                    <td>
-                      <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">cars.update</font>
-                      </font>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">ELIMINAR</font>
-                      </font>
-                    </td>
-                    <td><code>/cars/{car}</code></td>
-                    <td><code>destroy</code></td>
-                    <td>
-                      <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">coches.destruir</font>
-                      </font>
-                    </td>
-                  </tr>
+                <tr>
+                <td>GET</td>
+                <td><code>/cars</code></td>
+                <td><code>index</code></td>
+                <td>cars.index</td>
+                </tr>
+                <tr>
+                <td>GET</td>
+                <td><code>/cars/create</code></td>
+                <td><code>create</code></td>
+                <td>cars.create</td>
+                </tr>
+                <tr>
+                <td>POST</td>
+                <td><code>/cars</code></td>
+                <td><code>store</code></td>
+                <td>cars.store</td>
+                </tr>
+                <tr>
+                <td>GET</td>
+                <td><code>/cars/{car}</code></td>
+                <td><code>show</code></td>
+                <td>cars.show</td>
+                </tr>
+                <tr>
+                <td>GET</td>
+                <td><code>/cars/{car}/edit</code></td>
+                <td><code>edit</code></td>
+                <td>cars.edit</td>
+                </tr>
+                <tr>
+                <td>PUT/PATCH</td>
+                <td><code>/cars/{car}</code></td>
+                <td><code>update</code></td>
+                <td>cars.update</td>
+                </tr>
+                <tr>
+                <td>DELETE</td>
+                <td><code>/cars/{car}</code></td>
+                <td><code>destroy</code></td>
+                <td>cars.destroy</td>
+                </tr>
                 </tbody>
-              </table>
+                </table>
+                <p>
+                  <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Para este ejemplo el fichero <code>routes/web.php</code> debe quedar de la siguiente manera:</font>
+                  </font>
+                </p>
+                <pre class=" language-php" data-language="php"><code class=" language-php"><span class="token delimiter">&lt;?php</span><font></font>
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarController;
+
+Route::get('/cars/{car}',[CarController::class,'show'])->name('cars.show');</code></pre>
+<p>
+  <font style="vertical-align: inherit;">
+    <font style="vertical-align: inherit; color:red">Es muy importante definir la linea <code>use App\Http\Controllers\CarController;</code> ya que especifica el controlador que se va a utilizar.</font>
+  </font>
+</p>
               <p><strong>
                   <font style="vertical-align: inherit;">
                     <font style="vertical-align: inherit;">Ahora, por el bien de ejemplo, completemos la implementación
@@ -36988,11 +36853,10 @@
                 </strong></p>
               <h2>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">La </font>
+                  <font style="vertical-align: inherit;">La acción</font>
                 </font><code>show</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">acción </font>
-                  <font style="vertical-align: inherit;">del controlador</font>
+                  <font style="vertical-align: inherit;">del controlador <code>CarController.php</code></font>
                 </font>
               </h2>
               <p>
@@ -37002,13 +36866,13 @@
                 </font><code>http://app.url/cars/{car}</code>
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;">. </font>
-                  <font style="vertical-align: inherit;">En este caso, el </font>
+                  <font style="vertical-align: inherit;">En este caso, </font>
                 </font><code>{car}</code>
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;">será, de hecho, un </font>
                 </font><code>id</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">objeto de automóvil en la base de datos.</font>
+                  <font style="vertical-align: inherit;">del objeto <code>Car</code> en la base de datos.</font>
                 </font>
               </p>
               <p>
@@ -37020,7 +36884,7 @@
                   <font style="vertical-align: inherit;">de </font>
                 </font><code>1</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">sería </font>
+                  <font style="vertical-align: inherit;">será </font>
                 </font><code>http://app.url/cars/1</code>
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;">.</font>
@@ -37028,27 +36892,25 @@
               </p>
               <p>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Para implementar la página Show Car, en la </font>
+                  <font style="vertical-align: inherit;">Para implementar la página Show Car, en la acción</font>
                 </font><code>show</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">acción </font>
-                  <font style="vertical-align: inherit;">del controlador </font>
-                  <font style="vertical-align: inherit;">, necesitamos:</font>
+                  <font style="vertical-align: inherit;">del controlador, necesitamos:</font>
                 </font>
               </p>
               <ol>
                 <li>
                   <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">Utilice el </font>
+                    <font style="vertical-align: inherit;">Utilizar el modelo</font>
                   </font><code>Car</code>
                   <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">modelo para recuperar el objeto Car designado de la base de
+                    <font style="vertical-align: inherit;"> para recuperar el objeto Car designado de la base de
                       datos.</font>
                   </font>
                 </li>
                 <li>
                   <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">Cargue una vista para la página Show Car y pásele el objeto
+                    <font style="vertical-align: inherit;">Cargar una vista para la página Show Car y pasarle el objeto
                       Car recuperado de la base de datos.</font>
                   </font>
                 </li>
@@ -37056,86 +36918,70 @@
               <p>
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;">Primero, para acceder al modelo de automóvil en el controlador,
-                    necesitamos agregar una nueva </font>
+                    necesitamos agregar una nueva declaración </font>
                 </font><code>use</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">declaración sobre la clase del controlador:</font>
+                  <font style="vertical-align: inherit;"> sobre la clase del controlador:</font>
                 </font>
               </p>
-              <pre class=" language-php" data-language="php"><code class=" language-php"><span class="token punctuation">.</span>
-<span class="token punctuation">.</span>
-<span class="token punctuation">.</span>
-<span class="token keyword">use</span> <span class="token package">App<span class="token punctuation">\</span>Car</span><span class="token punctuation">;</span><font></font>
-<font></font>
-<span class="token keyword">class</span> <span class="token class-name">CarController</span> <span class="token keyword">extends</span> <span class="token class-name">Controller</span>
-<span class="token punctuation">{</span>
-<span class="token punctuation">.</span>
-<span class="token punctuation">.</span>
-<span class="token punctuation">.</span>
+              <pre class=" language-php" data-language="php"><code class=" language-php">use Illuminate\Support\Facades\DB;
 </code></pre>
               <p>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Luego, podemos completar la </font>
+                  <font style="vertical-align: inherit;">Luego, podemos completar la acción</font>
                 </font><code>show</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">acción con el siguiente código:</font>
+                  <font style="vertical-align: inherit;"> con el siguiente código:</font>
                 </font>
               </p>
-              <pre class=" language-php" data-language="php"><code class=" language-php"><span class="token punctuation">.</span>
-<span class="token punctuation">.</span>
-<span class="token punctuation">.</span>
-    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">show<span class="token punctuation">(</span></span><span class="token variable">$id</span><span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-      <span class="token variable">$car</span> <span class="token operator">=</span> <span class="token scope">Car<span class="token punctuation">::</span></span><span class="token function">find<span class="token punctuation">(</span></span><span class="token variable">$id</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">return</span> <span class="token function">view<span class="token punctuation">(</span></span><span class="token string">'cars.show'</span><span class="token punctuation">,</span> <span class="token keyword">array</span><span class="token punctuation">(</span><span class="token string">'car'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$car</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">.</span>
-<span class="token punctuation">.</span>
-<span class="token punctuation">.</span>
-</code></pre>
+<pre class=" language-php" data-language="php"><code class=" language-php">...
+  public function show(Car $car)
+  {
+      $car = DB::select('select * from cars where id = ?', [$car->id]);
+
+      return view('cars.show', ['car'=>$car[0]]);
+  }
+...</code></pre>
               <p>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Cuando visitamos la URL del auto 1 - </font>
+                  <font style="vertical-align: inherit;">Cuando visitamos la URL del auto con id = 1</code> - </font>
                 </font><code>http://app.url/cars/1</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">- Laravel hace que </font>
+                  <font style="vertical-align: inherit;">- Laravel hace que el id </font>
                 </font><code>1</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">la URL sea accesible a través de la </font>
-                </font><code>$id</code>
+                  <font style="vertical-align: inherit;">de la URL sea accesible a través de la variable de entrada</font>
+                </font><code>$car->id</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">variable en la </font>
+                  <font style="vertical-align: inherit;"> de la función</font>
                 </font><code>show</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">función, que se muestra arriba.</font>
+                  <font style="vertical-align: inherit;"> que se muestra arriba.</font>
                 </font>
               </p>
               <p>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Y recuperar el objeto del automóvil usando el </font>
+                  <font style="vertical-align: inherit;">Y recuperar el objeto del automóvil usando el modelo</font>
                 </font><code>Car</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">modelo es tan fácil como llamar </font>
-                </font><code>Car::find</code>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">y pasar eso </font>
-                </font><code>$id</code>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">.</font>
+                  <font style="vertical-align: inherit;"> es tan fácil como <a href="https://laravel.com/docs/8.x/database#running-queries">correr una query</a></font>
                 </font>
+                <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">y agregar la variable </font>
+                </font><code>$car->id</code> al condicional de la query.
               </p>
               <p>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Luego, la vista se carga usando la </font>
+                  <font style="vertical-align: inherit;">Luego, la vista se carga usando la función</font>
                 </font><code>view</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">función y pasando el nombre de la vista (que crearemos en un
-                    minuto) y una matriz con los datos que se proporcionarán a la vista.</font>
+                  <font style="vertical-align: inherit;"> y pasando el nombre de la vista (que crearemos en un
+                    minuto) y el/los datos que se proporcionarán a la vista.</font>
                 </font>
               </p>
               <p>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Por último, necesitamos crear la vista del espectáculo.</font>
+                  <font style="vertical-align: inherit;">Por último, necesitamos crear la vista show.</font>
                 </font>
               </p>
               <h2>
@@ -37145,46 +36991,37 @@
               </h2>
               <p>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Los archivos de vista de Laravel están todos almacenados en la
+                  <font style="vertical-align: inherit;">Los archivos de vista de Laravel están todos almacenados en la carpeta
                   </font>
                 </font><code>resources/views</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">carpeta. </font>
                   <font style="vertical-align: inherit;">Y se pueden organizar en subcarpetas dentro de ese directorio.
                   </font>
                 </font>
               </p>
               <p>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">En el paso anterior, pasamos a la </font>
+                  <font style="vertical-align: inherit;">En el paso anterior, pasamos a la función</font>
                 </font><code>view</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">función el nombre de la vista </font>
-                </font><code>cars.show</code>
+                  <font style="vertical-align: inherit;"> el nombre de la vista </font>
+                </font><code>cars.show</code>.
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">. </font>
                   <font style="vertical-align: inherit;">Eso le dice a Laravel que busque un archivo de vista ubicado en
                     una subcarpeta llamada </font>
                 </font><code>cars</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">(dentro del </font>
+                  <font style="vertical-align: inherit;">(dentro del directorio principal</font>
                 </font><code>resources/views</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">directorio </font>
-                  <font style="vertical-align: inherit;">principal </font>
-                  <font style="vertical-align: inherit;">) named </font>
-                </font><code>show.blade.php</code>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">.</font>
-                </font>
+                  <font style="vertical-align: inherit;">) llamado </font>
+                </font><code>show.blade.php</code>.
               </p>
               <p>
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;">Los archivos de vista de Laravel utilizan el </font>
-                </font><a target="_blank" href="http://laravel.com/docs/5.1/blade"><strong>
-                    <font style="vertical-align: inherit;">
+                </font><a target="_blank" href="https://laravel.com/docs/master/blade"><strong>
                       <font style="vertical-align: inherit;">motor de plantillas Blade</font>
-                    </font>
                   </strong></a>
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;"> y, por lo tanto, se nombran </font>
@@ -37196,10 +37033,10 @@
               <p>
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;">Entonces, para finalizar la implementación de esta página de
-                    Show Car, podemos crear el </font>
+                    Show Car, podemos crear el archivo de vista</font>
                 </font><code>resources/views/cars/show.blade.php</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">archivo de vista con el siguiente código:</font>
+                  <font style="vertical-align: inherit;">con el siguiente código:</font>
                 </font>
               </p>
               <pre class=" language-php" data-language="php"><code class=" language-php"><span class="token markup"><span class="token doctype">&lt;!DOCTYPE html&gt;</span></span>
@@ -37219,20 +37056,14 @@
 </code></pre>
               <p>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">Dado que pasamos el </font>
-                </font><code>Car</code>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">objeto a la vista, nuevamente en la </font>
-                </font><code>show</code>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">acción del controlador, con la clave de matriz </font>
+                  <font style="vertical-align: inherit;">Dado que pasamos el primer registro del array de resultados </font>
                 </font><code>car</code>
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;">, podemos acceder a él en la vista a través de una variable del
                     mismo nombre </font>
                 </font><code>$car</code>
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">,.</font>
+                  <font style="vertical-align: inherit;">.</font>
                 </font>
               </p>
               <p>
@@ -37244,13 +37075,12 @@
               <p>
                 <font style="vertical-align: inherit;">
                   <font style="vertical-align: inherit;">Y, como puede ver, </font>
-                </font><code>Car</code>
+
+                  <font style="vertical-align: inherit;">se puede acceder a los valores del objeto <code>Car</code> usando los mismos
+                    nombres que los nombres de los atributos </font>
+                
                 <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">se puede acceder a los valores del objeto usando los mismos
-                    nombres que los nombres </font>
-                </font><code>cars</code>
-                <font style="vertical-align: inherit;">
-                  <font style="vertical-align: inherit;">de columna de la tabla de la base de datos </font>
+                  <font style="vertical-align: inherit;">de la tabla <code>cars</code> de la base de datos </font>
                   <font style="vertical-align: inherit;">asociada </font>
                   <font style="vertical-align: inherit;">.</font>
                 </font>
